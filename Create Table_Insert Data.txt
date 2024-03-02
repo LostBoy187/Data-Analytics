@@ -1,0 +1,211 @@
+CREATE TABLES/INSERT DATA/VARIOUS STATEMENTS
+
+Table 1 Query:
+Create Table EmployeeDemographics 
+(EmployeeID int, 
+FirstName varchar(50), 
+LastName varchar(50), 
+Age int, 
+Gender varchar(50)
+)
+
+Table 2 Query:
+Create Table EmployeeSalary 
+(EmployeeID int, 
+JobTitle varchar(50), 
+Salary int
+)
+
+Table 1 Insert:
+Insert into EmployeeDemographics VALUES
+(1001, 'Jim', 'Halpert', 30, 'Male'),
+(1002, 'Pam', 'Beasley', 30, 'Female'),
+(1003, 'Dwight', 'Schrute', 29, 'Male'),
+(1004, 'Angela', 'Martin', 31, 'Female'),
+(1005, 'Toby', 'Flenderson', 32, 'Male'),
+(1006, 'Michael', 'Scott', 35, 'Male'),
+(1007, 'Meredith', 'Palmer', 32, 'Female'),
+(1008, 'Stanley', 'Hudson', 38, 'Male'),
+(1009, 'Kevin', 'Malone', 31, 'Male')
+
+Table 2 Insert:
+Insert Into EmployeeSalary VALUES
+(1001, 'Salesman', 45000),
+(1002, 'Receptionist', 36000),
+(1003, 'Salesman', 63000),
+(1004, 'Accountant', 47000),
+(1005, 'HR', 50000),
+(1006, 'Regional Manager', 65000),
+(1007, 'Supplier Relations', 41000),
+(1008, 'Salesman', 48000),
+(1009, 'Accountant', 42000)
+ 
+SELECT *
+from EmployeeDemographics
+
+SELECT TOP 5 *
+from EmployeeDemographics
+
+DISTINCT:
+SELECT DISTINCT (employeeID)
+from EmployeeDemographics
+
+SELECT DISTINCT (Gender)
+from EmployeeDemographics
+
+COUNT:
+SELECT COUNT(LastName)
+FROM EmployeeDemographics
+
+SELECT COUNT(FirstName) AS FirstNameCount
+FROM EmployeeDemographics
+
+MAX/MIN/AVERAGE:
+SELECT max(salary)
+from EmployeeSalary
+
+SELECT min(salary)
+from EmployeeSalary
+
+SELECT avg(salary)
+from EmployeeSalary
+
+FROM:
+Selecting information from a database that the data does reside in:
+SELECT *
+from [SQL Tutorial].dbo.EmployeeSalary
+
+WHERE:
+SELECT *
+from EmployeeDemographics
+where FirstName='Jim'
+
+<> Does not equal
+from EmployeeDemographics
+where FirstName<>'Jim'
+
+Greater Than:
+SELECT *
+from EmployeeDemographics
+where Age > 30
+
+Greater than and equsl to:
+SELECT *
+from EmployeeDemographics
+where Age >= 30
+
+Less than:
+SELECT *
+from EmployeeDemographics
+where Age < 32
+
+Less than and equal to:
+SELECT *
+from EmployeeDemographics
+where Age <= 32
+
+AND:
+SELECT *
+from EmployeeDemographics
+where Age <= 32 and gender = 'male'
+
+OR
+SELECT *
+from EmployeeDemographics
+where Age <= 32 or gender = 'male'
+
+LIKE (WITH WILD CARD):
+SELECT *
+from EmployeeDemographics
+where LastName like 'S%'
+
+SELECT *
+from EmployeeDemographics
+where LastName like '%S%'
+
+SELECT * 
+from EmployeeDemographics
+where LastName like 'S%O%'
+
+NULL/NOT NULL
+SELECT *
+from EmployeeDemographics
+where FirstName is NULL
+
+SELECT *
+from EmployeeDemographics
+where FirstName is NOT NULL
+
+IN:
+SELECT *
+from EmployeeDemographics
+where FirstName IN ('Jim','Michael')
+
+DISTINCT:
+SELECT DISTINCT Gender
+from EmployeeDemographics
+
+GROUP BY:
+SELECT Gender 
+from EmployeeDemographics
+group by Gender
+
+SELECT Gender, count(gender)
+from EmployeeDemographics
+group by Gender
+
+SELECT *
+from EmployeeDemographics
+
+SELECT Gender, count(gender)
+from EmployeeDemographics
+group by Gender
+
+SELECT Gender,Age, count(gender)
+from EmployeeDemographics
+group by Gender, Age
+
+SELECT Gender,Age, count(gender)
+from EmployeeDemographics
+where age > 31
+group by Gender, Age
+
+ORDER BY:
+SELECT Gender, count(gender) as CountGender
+from EmployeeDemographics
+where age > 31
+group by Gender
+order by CountGender
+
+SELECT Gender, count(gender) as CountGender
+from EmployeeDemographics
+where age > 31
+group by Gender
+order by CountGender desc
+
+SELECT Gender, count(gender) as CountGender
+from EmployeeDemographics
+where age > 31
+group by Gender
+order by Gender desc
+
+SELECT *
+from EmployeeDemographics
+order by Age desc, Gender desc
+
+SELECT * (by column number)
+from EmployeeDemographics
+order by 4 desc, 5 desc
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+JOINS:
+select *
+from [SQL Tutorial].dbo.EmployeeDemographics
+inner join [SQL Tutorial].dbo.EmployeeSalary
+on EmployeeDemographics.EmployeeID=EmployeeSalary.EmployeeID
+
+SELECT *
+FROM [SQL Tutorial].dbo.EmployeeDemographics
+Full Outer Join [SQL Tutorial].dbo.EmployeeSalary
+	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+SELECT *
+FROM [SQL Tutorial].dbo.EmployeeDemographics
+left Outer Join [SQL Tutorial].dbo.EmployeeSalary
+	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+SELECT *
+FROM [SQL Tutorial].dbo.EmployeeDemographics
+right Outer Join [SQL Tutorial].dbo.EmployeeSalary
+	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+SELECT EmployeeDemographics.EmployeeID,FirstName, LastName, JobTitle,Salary
+FROM [SQL Tutorial].dbo.EmployeeDemographics
+inner Join [SQL Tutorial].dbo.EmployeeSalary
+	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+SELECT EmployeeSalary.EmployeeID,FirstName, LastName, JobTitle,Salary
+FROM [SQL Tutorial].dbo.EmployeeDemographics
+right outer Join [SQL Tutorial].dbo.EmployeeSalary
+	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+SELECT EmployeeDemographics.EmployeeID,FirstName, LastName, JobTitle,Salary
+FROM [SQL Tutorial].dbo.EmployeeDemographics
+right outer Join [SQL Tutorial].dbo.EmployeeSalary
+	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+SELECT EmployeeDemographics.EmployeeID,FirstName, LastName, JobTitle,Salary
+FROM [SQL Tutorial].dbo.EmployeeDemographics
+left outer Join [SQL Tutorial].dbo.EmployeeSalary
+	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
